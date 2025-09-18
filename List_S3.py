@@ -5,7 +5,10 @@ for bucket in s3.buckets.all():
     print(bucket.name)
 
 
-print("\n\n")
-bucket = s3.Bucket('boto3-s3-bucket-upload-test')
+print("\n")
+bucket_name = 'your-bucket-name'
+bucket = s3.Bucket(bucket_name)
+print(bucket.name)
+print("\n")
 for obj in bucket.objects.all():
     print(obj.key)
