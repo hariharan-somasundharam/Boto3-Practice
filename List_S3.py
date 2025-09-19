@@ -6,13 +6,10 @@ for bucket in s3.buckets.all():
 
 
 print("\n")
-bucket_name = 'your-bucket-name'
+bucket_name = 'boto3-s3-bucket-upload-test'
 bucket = s3.Bucket(bucket_name)
 print(bucket.name)
 print("\n")
+
 for obj in bucket.objects.all():
     print(obj.key)
-
-# S3 = boto3.client('s3')
-# bucket_list = S3.list_buckets()
-# print(bucket_list)
