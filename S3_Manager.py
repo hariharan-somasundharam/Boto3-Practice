@@ -13,7 +13,7 @@ class S3Manager:
         for bucket in response['Buckets']:
             print(f"  - {bucket['Name']}")
     
-    def create_bucket(self, bucket_name, region='us-east-1'):
+    def create_bucket(self, bucket_name, region='us-west-2'):
         """Create a new S3 bucket"""
         try:
             if region == 'us-east-1':
@@ -58,13 +58,14 @@ class S3Manager:
 # Usage example
 if __name__ == "__main__":
     manager = S3Manager()
+    bucket_name = 'bucket-name'  
+    region = 'us-west-2'
+    manager.create_bucket(bucket_name, region)
+    
     # manager.list_buckets()
-    
-    # Create a new bucket (uncomment to use)
-    # manager.create_bucket('my-test-bucket-unique-name')
-    
+
     # Upload a file (create a test.txt file first)
     # manager.upload_file('my-test-bucket-unique-name', 'test.txt')
     
     # List files in bucket
-    manager.list_files('humhealth-client-repository')
+    # manager.list_files('humhealth-client-repository')

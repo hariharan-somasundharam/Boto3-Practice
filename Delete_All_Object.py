@@ -12,5 +12,5 @@ def delete_all_objects(bucket_name):
     print(res)
     bucket.delete_objects(Delete={'Objects' : res})
 
-bucket_name = 'boto3-s3-bucket-upload-test'
+bucket_name = 'bucket-name'
 delete_all_objects(bucket_name)
